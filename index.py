@@ -1,43 +1,20 @@
-def greet(name):
-    print(f"Hello {name}")
+intNum = 10
+floatNum = 10.5
+complexNum = 2 + 9j
 
 
-greet("John")
-
-num = 10
-double = lambda x: x * 2
-print(double(num))
-
-
-def logs(level, *msgs, **userDetails):
-    print(f"level - {level}, msgs - {msgs}, user details - {userDetails}")
+text = "hello"
+li = [1, 2, 3, 2, 2, 5, 2]
+tup = (1, 2, 3, 4, 5)
+rangeArr = range(10)
 
 
-logs(10, "start", "continuing", name="John", age=30, gender="male")
+dictionary = {"name": "Alice", "age": 30, "city": "New York"}
 
+sets = {1, 2, 3, 2, 2, 5, 2}
+frozenSets = frozenset({1, 2, 3, 2, 2, 5, 2})
 
-def logIn(func):
-    def wrapper(*args, **kwargs):
-        print(f"user logs in...")
-        func(*args, **kwargs)
+isVaild = True
 
-    return wrapper
-
-
-def auth(func):
-    def wrapper(*args, **kwargs):
-        print(f"user auth ...")
-        func(*args, **kwargs)
-
-    return wrapper
-
-
-@logIn
-@auth
-def user(name):
-    print(name)
-
-
-user("Mark")
-
-print(sum.__doc__)
+x = None
+print(frozenSets)
