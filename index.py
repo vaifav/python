@@ -1,20 +1,12 @@
-intNum = 10
-floatNum = 10.5
-complexNum = 2 + 9j
+import copy
 
+a = [1,2,[3,4]]
+b = a.copy()
+c = copy.deepcopy(a)
 
-text = "hello"
-li = [1, 2, 3, 2, 2, 5, 2]
-tup = (1, 2, 3, 4, 5)
-rangeArr = range(10)
+b[2].append(10)
+c[2].append(20)
 
-
-dictionary = {"name": "Alice", "age": 30, "city": "New York"}
-
-sets = {1, 2, 3, 2, 2, 5, 2}
-frozenSets = frozenset({1, 2, 3, 2, 2, 5, 2})
-
-isVaild = True
-
-x = None
-print(frozenSets)
+print(a)
+print(b)
+print(c)
