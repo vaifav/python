@@ -1,43 +1,24 @@
-def greet(name):
-    print(f"Hello {name}")
+from functools import reduce
+from operator import *
+from itertools import zip_longest
 
+nums = [1, 2, 3]
+res = map(lambda x: x * 2, nums)
+print(list(res))
 
-greet("John")
+nums = [1, 2, 3, 4, 5]
+evens = filter(lambda x: x % 2 == 0, nums)
+print(list(evens))
 
-num = 10
-double = lambda x: x * 2
-print(double(num))
+nums = [1, 2, 3, 4]
+prod = reduce(lambda a, b: a * b, nums)
+opProd = reduce(mul, nums)
+print(prod)
+print(opProd)
 
-
-def logs(level, *msgs, **userDetails):
-    print(f"level - {level}, msgs - {msgs}, user details - {userDetails}")
-
-
-logs(10, "start", "continuing", name="John", age=30, gender="male")
-
-
-def logIn(func):
-    def wrapper(*args, **kwargs):
-        print(f"user logs in...")
-        func(*args, **kwargs)
-
-    return wrapper
-
-
-def auth(func):
-    def wrapper(*args, **kwargs):
-        print(f"user auth ...")
-        func(*args, **kwargs)
-
-    return wrapper
-
-
-@logIn
-@auth
-def user(name):
-    print(name)
-
-
-user("Mark")
-
-print(sum.__doc__)
+cordinates = ["x", "y", "z", "xy", "xz", "yx", "yz", "zx", "zy"]
+cordinateValues = [1, 2, 3]
+zippedValues = zip(cordinates, cordinateValues)
+zippedLongestValues = zip_longest(cordinates, cordinateValues, fillvalue=0)
+print(list(zippedValues))
+print(list(zippedLongestValues))
